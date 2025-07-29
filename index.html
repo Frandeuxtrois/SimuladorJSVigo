@@ -1,13 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Concesionaria JS a Fondo</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Bienvenido a concesionaria FTV</h1>
-<script src="js/main.js"></script>
+
+    <header class="header">
+        <div class="container">
+            <div class="nav-bar">
+                <a href="index.html" class="logo">JS a Fondo</a>
+                <div class="nav-sesion">
+                    <div id="mensaje-bienvenida" class="mensaje-bienvenida"></div>
+                    <button id="ver-carrito" class="btn-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-counter" class="cart-counter">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <h1 class="titulo-catalogo">Nuestro Catálogo de Vehículos</h1>
+        <p class="subtitulo-catalogo">Elige el auto de tus sueños y agrégalo al carrito.</p>
+
+        <section id="catalogo-autos" class="catalogo-grid">
+            
+            <div class="card-auto">
+                <img src="media/uno.jpg" alt="Fiat Uno">
+                <div class="card-auto-info">
+                    <h3>Uno</h3>
+                    <p class="precio">$5.500.000</p>
+                    <button class="btn btn-primario btn-agregar" 
+                            data-id="1" 
+                            data-modelo="Uno" 
+                            data-precio="5500000">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-auto">
+                <img src="media/corsa.jpg" alt="Chevrolet Corsa">
+                <div class="card-auto-info">
+                    <h3>Corsa</h3>
+                    <p class="precio">$7.000.000</p>
+                    <button class="btn btn-primario btn-agregar" 
+                            data-id="2" 
+                            data-modelo="Corsa" 
+                            data-precio="7000000">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-auto">
+                <img src="media/punto.jpg" alt="Fiat Punto">
+                <div class="card-auto-info">
+                    <h3>Punto</h3>
+                    <p class="precio">$8.500.000</p>
+                    <button class="btn btn-primario btn-agregar" 
+                            data-id="3" 
+                            data-modelo="Punto" 
+                            data-precio="8500000">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-auto">
+                <img src="media/vento.jpg" alt="Volkswagen Vento">
+                <div class="card-auto-info">
+                    <h3>Vento</h3>
+                    <p class="precio">$11.000.000</p>
+                    <button class="btn btn-primario btn-agregar" 
+                            data-id="4" 
+                            data-modelo="Vento" 
+                            data-precio="11000000">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="carrito-modal" class="modal-overlay">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" id="cerrar-modal">×</button>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="carrito-items-container">
+            </div>
+            <div id="mensaje-final" class="mensaje-final-oculto"></div>
+            <div class="carrito-total">
+                <p>Total:</p>
+                <p id="carrito-total-precio">$0</p>
+            </div>
+            <div class="carrito-acciones">
+                <button id="finalizar-compra" class="btn btn-primario">Finalizar Compra</button>
+                <button id="vaciar-carrito" class="btn btn-peligro">Vaciar Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="nombre-modal" class="modal-overlay">
+        <div class="modal-contenido">
+            <h2>¡Bienvenido/a!</h2>
+            <p>Por favor, ingresa tu nombre para continuar.</p>
+            <div class="form-group">
+                <input type="text" id="nombre-input" placeholder="Escribe tu nombre aquí" class="input-nombre">
+                <p id="error-nombre" class="error-nombre"></p>
+            </div>
+            <button id="guardar-nombre" class="btn btn-primario">Ingresar</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>Proyecto N°2 - Curso de JavaScript</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
